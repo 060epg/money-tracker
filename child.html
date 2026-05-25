@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>親子記帳通 - 小孩端</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1 id="welcomeText">你好，小孩端 👋</h1>
+            <p id="familyInfo"></p>
+        </div>
+        <button onclick="logout()" class="btn-logout">安全登出</button>
+    </header>
+
+    <main>
+        <!-- 雲端餘額看板 -->
+        <section class="dashboard-card child-theme">
+            <h2>💰 我的零用錢錢包</h2>
+            <div class="balance-display">
+                目前餘額：$<span id="balanceAmount">0</span>
+            </div>
+            <div id="lowBalanceAlert" class="alert-banner hidden">
+                ⚠️ 警告：零用錢已低於家長設定的門檻！請節約使用！
+            </div>
+        </section>
+
+        <!-- 記帳表單 -->
+        <section class="card">
+            <h3>📝 新增一筆花費申請</h3>
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label for="amount">花費金額：</label>
+                    <input type="number" id="amount" required min="1" placeholder="請輸入數字">
+                </div>
+                <div class="form-group">
+                    <label for="category">消費類別：</label>
+                    <select id="category">
+                        <option value="餐飲">餐飲 (早餐、飲料、點心)</option>
+                        <option value="文具">文具 (筆、筆記本、美勞)</option>
+                        <option value="娛樂">娛樂 (玩具、遊戲、課外書)</option>
+                        <option value="交通">交通 (公車、捷運)</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="note">備註說明：</label>
+                    <input type="text" id="note" placeholder="例如：買彩色筆、買麥當勞">
+                </div>
+                <button type="submit" class="btn-submit child-btn">送出申請（等待父母審核）</button>
+            </form>
+        </section>
+
+        <!-- 歷史紀錄 -->
+        <section class="card">
+            <h3>📜 我的記帳歷史紀錄</h3>
+            <ul id="childLogList" class="log-list">
+                <!-- 動態載入 -->
+            </ul>
+        </section>
+    </main>
+
+    <script type="module" src="child.js"></script>
+</body>
+</html>

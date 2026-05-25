@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雲端親子記帳通 - 登入</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+        <div class="login-card">
+            <h2>👨‍👩‍👧‍👦 雲端親子記帳系統</h2>
+            <p class="login-subtitle">請輸入家庭代號以進行同步</p>
+            
+            <div class="form-group">
+                <label for="familyId">家庭代號：</label>
+                <input type="text" id="familyId" placeholder="例如：smith2026" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">您的稱呼：</label>
+                <input type="text" id="username" placeholder="例如：小明、媽媽" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="role">登入身分：</label>
+                <select id="role">
+                    <option value="child">小孩 (登記帳目、查看歷史)</option>
+                    <option value="parent">家長 (審核帳目、控制錢包)</option>
+                </select>
+            </div>
+            
+            <button id="loginBtn" class="btn-primary">進入系統</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

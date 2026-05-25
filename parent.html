@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>親子記帳通 - 家長端</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1 id="welcomeText">你好，家長管理端 👑</h1>
+            <p id="familyInfo"></p>
+        </div>
+        <button onclick="logout()" class="btn-logout">安全登出</button>
+    </header>
+
+    <main>
+        <!-- 雲端狀態看板 -->
+        <section class="dashboard-card parent-theme">
+            <h2>📊 小孩的零用錢狀態</h2>
+            <div class="balance-display">
+                目前剩餘：$<span id="balanceAmount">0</span>
+            </div>
+            <div id="lowBalanceAlert" class="alert-banner hidden">
+                ⚠️ 提示：小孩的零用錢已低於警戒門檻！
+            </div>
+        </section>
+
+        <!-- 家長雲端控制台 -->
+        <section class="card">
+            <h3>⚙️ 家長遠端控制台</h3>
+            <div class="form-group-inline">
+                <label for="setBalanceInput">調整/發放零用錢：</label>
+                <input type="number" id="setBalanceInput">
+            </div>
+            <div class="form-group-inline">
+                <label for="setThresholdInput">設定低額警告門檻：</label>
+                <input type="number" id="setThresholdInput">
+            </div>
+            <button id="saveSettingsBtn" class="btn-save">更新雲端設定</button>
+        </section>
+
+        <!-- 待審核項目 -->
+        <section class="card border-highlight">
+            <h3>⏳ 待審核的花費申請 (即時更新)</h3>
+            <ul id="parentPendingList" class="log-list">
+                <!-- 動態載入 -->
+            </ul>
+        </section>
+
+        <!-- 所有明細 -->
+        <section class="card">
+            <h3>📋 所有歷史帳目明細</h3>
+            <ul id="parentHistoryList" class="log-list">
+                <!-- 動態載入 -->
+            </ul>
+        </section>
+    </main>
+
+    <script type="module" src="parent.js"></script>
+</body>
+</html>
