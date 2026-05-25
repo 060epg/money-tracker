@@ -16,7 +16,7 @@ const firebaseConfig = {
 const sessionData = localStorage.getItem('family_session');
 if (!sessionData) {
     alert('未登入，請先登入！');
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 
 const user = JSON.parse(sessionData);
